@@ -18,6 +18,8 @@
 ### Compilar y levantar los servicios con Docker
 - Entramos al directorio  
 ``cd booking-demo``
+- Limpiar e instalar
+``mvn clean && mvn install``  
 - Creamos el .jar del proyecto  
 ``./mvnw package && java -jar ./target/bookingdemo-0.0.1.jar``
 - Construimos la imagen Docker  
@@ -46,7 +48,7 @@ Para comprobar la disponibilidad, podremos buscar por código de ciudad o de hot
 | 003     | Roma      | 
 
 
-**Hoteles**
+**Hoteles:**
 
 |  Código | Hotel                  |
 |---------|------------------------|
