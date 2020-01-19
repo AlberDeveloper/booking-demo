@@ -1,0 +1,28 @@
+version: '2'
+services:
+  bookingdemo-service:
+    image: bookingdemo-docker
+    ports:
+      - 8080:8080
+    depends_on:
+      - bookingdemo-database
+    environment:
+      - SPRINT_JPA_HIBERNATE_DDL-AUTO=update
+      - SPRING_DATASOURCE_URL=jdbc:mysql://bookingdemo-database:3001/booking_demo
+      - SPRING_DATASOURCE_USERNAME=user
+      - SPRING_DATASOURCE_PASSWORD=user123
+  bookingdemo-database:
+    image: mysql
+    ports:
+      - "3001:3001"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=user123
+      - MYSQL_ONETIME_PASSWORD=true
+    volumes:
+      - ./mysql.cnf:/etc/mysql/conf.d/custom.cnf
+      
+      
+      
+      

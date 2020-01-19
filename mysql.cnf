@@ -1,0 +1,5 @@
+[mysqld]
+port=3001
+table_open_cache=250
+max_allowed_packet=256M
+open_files_limit=1000000
